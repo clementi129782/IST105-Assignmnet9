@@ -1,0 +1,14 @@
+Implementation Requirements
+1. Migrate the automation logic into Django
+•	Create a Django web interface to:
+    o	Authenticate and show token
+    o	List network devices
+    o	Show interface details by device IP
+•	Create three views (or API endpoints) corresponding to the options above
+•	Display responses inside styled HTML templates
+
+2. MongoDB Integration
+•	Store:
+    o	Timestamp
+    o	IP address of the device (if applicable)
+    o	Result (success/failure)
