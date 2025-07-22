@@ -1,0 +1,24 @@
+<h2>Device Interfaces</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Get Interfaces</button>
+</form>
+
+{% if interfaces %}
+  <table border="1">
+    <tr>
+      <th>Interface</th><th>Status</th><th>VLAN</th><th>Speed</th>
+    </tr>
+    {% for i in interfaces %}
+    <tr>
+      <td>{{ i.portName }}</td>
+      <td>{{ i.status }}</td>
+      <td>{{ i.vlanId }}</td>
+      <td>{{ i.speed }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+<a href="{% url 'menu' %}">Back to Menu</a>
